@@ -27,13 +27,15 @@ if (Meteor.isServer) {
   function ping(){
     var sites = Meteor.settings.public.sites;
     _.each(sites, function(site){
+      console.log('ping site', site.url);
       HTTP.get(site.url, function(err, result){
-        Logs.insert({
+        var logId = Logs.insert({
           site: site
           , timestamp: new Date()
-          , error: result.statusCode
+          , error: err ? result.statusCode : null
           , success: !err
         });
+        console.log('logId', logId);
       });
     });
   }
