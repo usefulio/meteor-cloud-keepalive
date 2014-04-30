@@ -17,9 +17,26 @@
 </template>
 
 <template name="Log">
-	<ul>
-		{{#each logs}}
-		<li>{{site.name}} {{timestamp}} - {{site.url}}</li>
-		{{/each}}
-	</ul>
+	<table>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Site</th>
+				<th>Timestamp</th>
+				<th>Url</th>
+				<th>Error</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each logs}}
+			<tr>
+				<td>{{status .}}</td>
+				<td>{{site.name}}</td>
+				<td>{{timestamp}}</td>
+				<td>{{site.url}}</td>
+				<td>{{error.reason}}</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
 </template>

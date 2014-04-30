@@ -6,6 +6,10 @@
 			, { "name": "JapanPostAPI Staging", "url": "http://japanpostapi.meteor.com" }
 			, { "name": "JapanPostAPI Production", "url": "http://japanshippingrates.io" }
 			, { "name": "SmartTAB Staging", "url": "http://smarttab.meteor.com" }
+			, { "name": "FlavorPlease", "url": "http://flavorplease.com" }
+			, { "name": "FlavorPlease WWW", "url": "http://www.flavorplease.com" }
+			, { "name": "FlavorPlease Services", "url": "http://services.flavorplease.com" }
+			, { "name": "FlavorPlease Admin", "url": "http://admin.flavorplease.com" }
 		]
 	}
 }
