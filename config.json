@@ -1,0 +1,11 @@
+{
+	"public": {
+		"sites": [
+			{ "name": "Useful Keepalive", "url": "http://usefulkeepalive.meteor.com" }
+			, { "name": "WRE Staging", "url": "http://whiterabbitexpress.meteor.com" }
+			, { "name": "JapanPostAPI Staging", "url": "http://japanpostapi.meteor.com" }
+			, { "name": "JapanPostAPI Production", "url": "http://japanshippingrates.io" }
+			, { "name": "SmartTAB Staging", "url": "http://smarttab.meteor.com" }
+		]
+	}
+}

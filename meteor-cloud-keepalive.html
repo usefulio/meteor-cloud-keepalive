@@ -1,0 +1,25 @@
+<head>
+	<title>Meteor Cloud Keepalive</title>
+</head>
+
+<body>
+	{{> SiteList}}
+	{{> Log}}
+</body>
+
+<template name="SiteList">
+	<h1>Applications I'm keeping alive:</h1>
+	<ul>
+		{{#each sites}}
+		<li>{{url}}</li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="Log">
+	<ul>
+		{{#each logs}}
+		<li>{{site.name}} {{timestamp}} - {{site.url}}</li>
+		{{/each}}
+	</ul>
+</template>
