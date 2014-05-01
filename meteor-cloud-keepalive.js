@@ -1,4 +1,4 @@
-Logs = new Meteor.Collection('logs');
+PingLogs = new Meteor.Collection('pingLogs');
 
 if (Meteor.isClient) {
   Meteor.subscribe('logs');
@@ -11,21 +11,24 @@ if (Meteor.isClient) {
 
   Template.Log.helpers({
     logs: function () {
-      return Logs.find({}, { sort: {timestamp: -1}});
+      return PingLogs.find({}, { sort: {timestamp: -1}});
     }
     , status: function(log){
       return log.success === true ? "UP" : "DOWN";
+    }
+    , fromNow: function(date){
+      return moment(date).fromNow();
     }
   });
 }
 
 if (Meteor.isServer) {
   Meteor.publish('logs', function(){
-    return Logs.find({}, { sort: {timestamp: -1}, limit: 50 })
+    return PingLogs.find({}, { sort: {timestamp: -1}, limit: 50 })
   });
 
   Meteor.publish('logs/all', function(){
-    return Logs.find({}, { sort: {timestamp: -1}, limit: 50 })
+    return PingLogs.find({}, { sort: {timestamp: -1}, limit: 50 })
   });
 
   function ping(){
@@ -33,7 +36,7 @@ if (Meteor.isServer) {
     _.each(sites, function(site){
       console.log('ping site', site.url);
       HTTP.get(site.url, function(err, result){
-        var logId = Logs.insert({
+        var logId = PingLogs.insert({
           site: site
           , timestamp: new Date()
           , error: err ? result.statusCode : null
