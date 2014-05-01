@@ -21,11 +21,11 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.publish('logs', function(){
-    return Logs.find({}, { sort: {timestamp: -1}, limit: 50 }})
+    return Logs.find({}, { sort: {timestamp: -1}, limit: 50 })
   });
 
   Meteor.publish('logs/all', function(){
-    return Logs.find({}, { sort: {timestamp: -1}, limit: 50 }})
+    return Logs.find({}, { sort: {timestamp: -1}, limit: 50 })
   });
 
   function ping(){
