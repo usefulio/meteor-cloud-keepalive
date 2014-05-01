@@ -11,7 +11,7 @@ if (Meteor.isClient) {
 
   Template.Log.helpers({
     logs: function () {
-      return Logs.find({}, { sort: {timestamp: -1}, limit: 10 * Meteor.settings.public.sites.length });
+      return Logs.find({}, { sort: {timestamp: -1});
     }
     , status: function(log){
       return log.success === true ? "UP" : "DOWN";
@@ -21,7 +21,11 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.publish('logs', function(){
-    return Logs.find({}, { sort: {timestamp: -1}, limit: 10 * Meteor.settings.public.sites.length })
+    return Logs.find({}, { sort: {timestamp: -1}, limit: 50 })
+  });
+
+  Meteor.publish('logs/all', function(){
+    return Logs.find({}, { sort: {timestamp: -1}, limit: 50 })
   });
 
   function ping(){
