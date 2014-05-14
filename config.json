@@ -6,6 +6,7 @@
 			, { "name": "WRE Staging", "url": "http://whiterabbitexpress.meteor.com" }
 			, { "name": "JapanPostAPI Staging", "url": "http://japanpostapi.meteor.com" }
 			, { "name": "JapanPostAPI Production", "url": "http://japanshippingrates.io" }
+			, { "name": "Japan Graded Reader", "url": "http://japanesegradedreaders.com" }
 			, { "name": "SmartTAB Staging", "url": "http://smarttab.meteor.com" }
 			, { "name": "FlavorPlease", "url": "http://flavorplease.com" }
 			, { "name": "FlavorPlease WWW", "url": "http://www.flavorplease.com" }
